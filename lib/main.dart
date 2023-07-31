@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'BranchesPage.dart';
 import 'ShopBottomNavigator.dart';
 import 'Product.dart';
 import 'DescriptionPage.dart';
@@ -55,7 +56,11 @@ class _StoreState extends State<Store> {
           backgroundColor: Colors.white,
           elevation: 0,
           actions: <Widget>[
-            IconButton(onPressed: () => {}, icon: const Icon(Icons.map, color: Colors.black45,))
+            IconButton(onPressed: () => {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context)=> const BranchesPage()
+              )),
+            }, icon: const Icon(Icons.map, color: Colors.black45,))
           ],
         ),
         body: Padding(
@@ -80,6 +85,7 @@ class _StoreState extends State<Store> {
       BaseOptions(
         contentType: 'application/json',
         responseType: ResponseType.plain,
+
       )
     );
     var response = await dio.get('http://www.welearnacademy.ir/flutter/products_list.json');
