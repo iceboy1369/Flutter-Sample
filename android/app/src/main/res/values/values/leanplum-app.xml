@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="leanplum_app_id">APP_ID</string>
+  <string name="leanplum_prod_key">PROD_KEY</string>
+  <string name="leanplum_dev_key">DEV_KEY</string>
+  <!-- Environment is 'production' OR 'development' -->
+  <string name="leanplum_environment">ENVIRONMENT</string>
+</resources>

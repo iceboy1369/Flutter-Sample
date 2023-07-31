@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#144c9c</color>
+    <color name="colorPrimaryDark">#103C80</color>
+    <color name="colorPrimaryDarkHigh">#10346D</color>
+    <color name="colorAccent">#1D67D1</color>
+
+    <color name="white_color">#FFFFFF</color>
+    <color name="white_color_transparent">#8BFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_transparent0">#8A000000</color>
+    <color name="black_transparent01">#CE000000</color>
+    <color name="black_transparent">#3E000000</color>
+    <color name="black_transparent2">#3F3F3F</color>
+    <color name="gray">#eeeeee</color>
+    <color name="gray_light">#C0C0C0</color>
+    <color name="gray_dark">#ADADAD</color>
+    <color name="gray_dark2">#9B9B9B</color>
+
+
+    <color name="green_light">#4caf50</color>
+    <color name="green_pure_light">#3A991E</color>
+    <color name="green_pure_dark">#357221</color>
+    <color name="green_pure_dark_low">#B5357221</color>
+    <color name="green">#0D6860</color>
+    <color name="red_light">#ec407a</color>
+    <color name="blue">#19B5FE</color>
+    <color name="blue_light">#64b5f6</color>
+
+    <color name="red_pure">#CA5151</color>
+    <color name="red_medium">#D32E2E</color>
+    <color name="red_high">#CC1616</color>
+
+    <color name="mdtp_accent_color">@color/colorAccent</color>
+    <color name="mdtp_accent_color_dark">@color/colorPrimary</color>
+
+</resources>
