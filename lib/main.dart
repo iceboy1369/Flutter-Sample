@@ -88,15 +88,15 @@ class _StoreState extends State<Store> {
 
       )
     );
-    var response = await dio.get('http://www.welearnacademy.ir/flutter/products_list.json');
-
-    setState(() {
-      var productJson = json.decode(response.data);
-      for(var i in productJson){
-        var productItem =  Product(i['product_name'], i['id'], i['price'], i['image_url'], i['off'], i['description']);
-        _items.add(productItem);
-      }
-    });
+    // var response = await dio.get('http://www.welearnacademy.ir/flutter/products_list.json');
+    //
+    // setState(() {
+    //   var productJson = json.decode(response.data);
+    //   for(var i in productJson){
+    //     var productItem =  Product(i['product_name'], i['id'], i['price'], i['image_url'], i['off'], i['description']);
+    //     _items.add(productItem);
+    //   }
+    // });
   }
 }
 
