@@ -18,7 +18,7 @@ class _BranchesPageState extends State<BranchesPage> {
   Set<Symbol> symbolList={};
 
   Future<Uint8List> loadMarkerImage() async {
-    var byteData = await rootBundle.load('marker.png');
+    var byteData = await rootBundle.load('assets/images/marker.png');
     return byteData.buffer.asUint8List();
   }
 
@@ -26,7 +26,7 @@ class _BranchesPageState extends State<BranchesPage> {
     mapController = controller;
 
     var markerImage = await loadMarkerImage();
-    await controller.addImage('marker', markerImage);
+    await controller.addImage('marker2', markerImage);
   }
 
   @override
@@ -80,15 +80,15 @@ class _BranchesPageState extends State<BranchesPage> {
   void addCircle(MapboxMapController mapController)async{
     for(var symbol in symbolList) {
 
-      Circle circle = Circle(
-          symbol.id.toString(),
-          CircleOptions(
-              geometry: LatLng(symbol.options.geometry!.latitude,symbol.options.geometry!.longitude),
-              circleColor: '#23d2aa',
-              circleRadius: 10
-          )
-      );
-      mapController.addCircle(circle.options);
+      // Circle circle = Circle(
+      //     symbol.id.toString(),
+      //     CircleOptions(
+      //         geometry: LatLng(symbol.options.geometry!.latitude,symbol.options.geometry!.longitude),
+      //         circleColor: '#23d2aa',
+      //         circleRadius: 10
+      //     )
+      // );
+      // mapController.addCircle(circle.options);
 
 
       mapController.addSymbol(symbol.options);
@@ -118,7 +118,7 @@ class _BranchesPageState extends State<BranchesPage> {
             SymbolOptions(
               textAnchor: branch.toString(),
               geometry: LatLng(branchItem.lat, branchItem.lng) ,
-              iconImage: 'marker',
+              iconImage: 'marker2',
               iconSize: 0.05,
             )
         );

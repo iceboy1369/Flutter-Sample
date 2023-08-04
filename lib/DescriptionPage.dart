@@ -10,7 +10,7 @@ class DescriptionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "فروشگاه آنلاین",
+          "اطلاعات محصول",
           style: TextStyle(
               color: Colors.black45,
               fontFamily: "IRANSans"
@@ -52,11 +52,26 @@ class DescriptionPage extends StatelessWidget {
             height: 30,
           ),
           Center(
-            child: Image.network(
-                _product.imageUrl,
-              height: 280,
-              width: 280,
+            // child: Image.network(
+            //     _product.imageUrl,
+            //   height: 280,
+            //   width: 280,
+            //   fit: BoxFit.contain,
+            // ),
+            child: FadeInImage(
+              image: NetworkImage(_product.imageUrl),
+              placeholder: AssetImage("assets/images/${_product.imageUrl}"),
+              imageErrorBuilder: (context, error, stackTrace) {
+                return Image.asset(
+                  'assets/images/${_product.imageUrl}',
+                  fit: BoxFit.contain,
+                  width: 280,
+                  height: 200,
+                );
+              },
               fit: BoxFit.contain,
+              width: 280,
+              height: 200,
             ),
           ),
           Text(
