@@ -99,18 +99,23 @@ class _BranchesPageState extends State<BranchesPage> {
   }
 
   void fetchPoints() async{
+    var branchesJson = json.decode('[]');
+
     var dio = Dio(
         BaseOptions(
           contentType: 'application/json',
           responseType: ResponseType.plain,
-
         )
     );
-    //var response = await dio.get('http://www.welearnacademy.ir/flutter/branches.json');
+
+    try{
+      var response = await dio.get('http://www.welearnacademy.ir/flutter/branches.json');
+      branchesJson = json.decode(response.data);
+    }catch(exception){
+      branchesJson = json.decode('[{"shop_name": "فروشگاه کاظمی", "id":1, "tel":"09159109704", "lat":32.689602, "lng":51.655582, "manager":"محمدی"}]');
+    }
 
     setState(() {
-      //var branchesJson = json.decode(response.data);
-      var branchesJson = json.decode('[{"shop_name": "فروشگاه کاظمی", "id":1, "tel":"09159109704", "lat":32.689602, "lng":51.655582, "manager":"محمدی"}]');
       for(var branch in branchesJson){
         var branchItem = Branch(branch['shop_name'], branch['id'], branch['tel'], branch['lat'], branch['lng'], branch['manager']);
         Symbol symbol = Symbol(
